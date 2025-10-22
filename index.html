@@ -1,0 +1,145 @@
+    <!DOCTYPE html>
+    <html lang = "pt-br">
+        <head>
+            <meta charset = "UTF-8">
+            <title>Dado Rpg</title>
+
+            <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+            <style>
+
+                /* Estilização da cor do fundo e do texto */
+                body{
+                    background-image: url("img/image copy.png");
+                    color: white;
+                    text-align: center;
+                    font-family: Cinzel, Cormorant Garamond;
+                }
+
+                h1{
+                    border: 2px solid #fff;
+                    padding: 10px 50px;
+                    border-radius: 10px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    display: inline-block;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    text-shadow: 5px 10px 5px #000;
+                    width: 200px;
+                }
+
+                /*Estilização dos botões*/
+                button{
+                    background-color: #3b3b3b;
+                    color: white;
+                    border: 2px solid white;
+                    padding: 10px 20px;
+                    font-size: 20px;
+                    cursor: pointer;
+                    margin: 10px;
+                    box-shadow: 2px 2px 5px #000;
+                    transition: 0.2s;
+                    border-radius: 5px;
+                    
+                }
+
+                /* Efeitos ao passar o mouse sobre os botões */
+                button:hover{
+                    background-color: #555;
+                }
+
+                button:active{
+                    transform: scale(0.95);
+                }
+
+                #resultado{
+                    display: inline-block;
+                    background-color: black;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    margin-top: 25px;
+                }
+
+                #imagemd6{
+                    margin-top: 10px;
+                }
+
+            </style>
+        </head>
+
+        <body>
+
+            <h1>Dado D6</h1>
+            <button id="d6">Rolar Dado</button>
+            <br>
+            <img id="imagemd6" src="img/image1.png" alt="Dado D6" width="100">
+            <br>
+            
+            <h1>Dado D4</h1>
+            <button id="d4">Rolar Dado</button>
+            <br>
+
+            <h1>Dado D8</h1>
+            <button id="d8">Rolar Dado</button>
+            <br>
+
+            <h1>Dado D12</h1>
+            <button id="d12">Rolar Dado</button>
+            <br>   
+
+            <h1>Dado D20</h1>
+            <button id="d20">Rolar Dado</button>
+            <br>
+
+            <h1>Dado D100</h1>
+            <button id="d100">Rolar Dado</button>   
+            <br>
+
+            <p id="resultado" >Clique no botão para rolar o dado</p>
+
+            <script>
+                const buttond6 = document.getElementById("d6");
+                buttond6.addEventListener("click", function() {
+                    const numerod6 = Math.floor(Math.random() * 6) + 1;
+                    document.getElementById("resultado").textContent = "Você rolou o número: " + numerod6;
+                    document.getElementById("imagemd6").src = "img/image" + numerod6 + ".png";
+                });
+
+                const buttond20 = document.getElementById("d20");
+                buttond20.addEventListener("click", function() {
+                    const numerod20 = Math.floor(Math.random() * 20) + 1;
+                    document.getElementById("resultado").textContent = "Você rolou o número: " + numerod20;
+                });
+
+                const buttond100 = document.getElementById("d100");
+                buttond100.addEventListener("click", function() {
+                    const numerod100 = Math.floor(Math.random() * 10) * 10 + 10;
+                    document.getElementById("resultado").textContent = "Você rolou o número: " + numerod100;
+                    if(numerod100 == 100){
+                    console.log("niceee");
+                }
+                });
+
+                const buttond4 = document.getElementById("d4");
+                buttond4.addEventListener("click", function(){
+                    const numerod4 = Math.floor(Math.random() * 4) + 1;
+                    document.getElementById("resultado").textContent = "Você rolou o número: " + numerod4;
+                });
+
+                const buttond8 = document.getElementById("d8");
+                buttond8.addEventListener("click", function(){
+                    const numerod8 = Math.floor(Math.random() * 8) + 1;
+                    document.getElementById("resultado").textContent = "Você rolou o número: " + numerod8;
+                });
+
+                const buttond12 = document.getElementById("d12");
+                buttond12.addEventListener("click", function(){
+                    const numerod12 = Math.floor(Math.random() * 12) + 1;
+                    document.getElementById("resultado").textContent = "Você rolou o número: " + numerod12; 
+                });
+
+                
+            </script>
+            
+        </body>
+    </html>
